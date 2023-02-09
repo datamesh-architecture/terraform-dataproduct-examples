@@ -1,5 +1,5 @@
 module shelf_warmers {
-  source = "../"
+  source = "git@github.com:datamesh-architecture/terraform-datamesh-dataproduct-aws-athena.git"
 
   aws        = var.aws
 

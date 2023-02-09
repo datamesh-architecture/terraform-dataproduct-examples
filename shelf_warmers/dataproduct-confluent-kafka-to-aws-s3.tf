@@ -1,5 +1,5 @@
 module "kafka_to_s3" {
-  source    = "../"
+  source    = "git@github.com:datamesh-architecture/terraform-datamesh-dataproduct-confluent-kafka-to-aws-s3.git"
 
   aws       = var.aws
   confluent = var.confluent
