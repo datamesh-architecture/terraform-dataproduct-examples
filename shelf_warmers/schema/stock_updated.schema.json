@@ -1,0 +1,24 @@
+{
+  "$id": "https://example.com/stock_updated.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "stock_updated",
+  "type": "object",
+  "properties": {
+    "location": {
+      "description": "",
+      "type": "string"
+    },
+    "available": {
+      "description": "",
+      "type": "integer"
+    },
+    "updated_at": {
+      "description": "",
+      "type": "string"
+    },
+    "sku": {
+      "description": "",
+      "type": "string"
+    }
+  }
+}
