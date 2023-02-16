@@ -9,7 +9,7 @@ module shelf_warmers {
 
   input = [
     {
-      source = "https://ykkep4kh79.execute-api.eu-central-1.amazonaws.com/prod/"
+      source = "https://<uuid>.execute-api.eu-central-1.amazonaws.com/prod/"
     }
   ]
 
@@ -19,6 +19,5 @@ module shelf_warmers {
 
   output = {
     format   = "PARQUET"
-    location = "shelf_warmers"
   }
 }

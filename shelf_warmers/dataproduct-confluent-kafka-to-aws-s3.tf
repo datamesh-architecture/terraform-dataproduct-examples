@@ -39,4 +39,7 @@ module "kafka_to_s3" {
       schema     = "schema/stock_updated.schema.json"
     }
   ]
+  output = {
+    grant_access = [ "<aws_account_id>" ]
+  }
 }
