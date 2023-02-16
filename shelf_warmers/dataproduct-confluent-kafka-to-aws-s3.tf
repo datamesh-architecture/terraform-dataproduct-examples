@@ -40,6 +40,6 @@ module "kafka_to_s3" {
     }
   ]
   output = {
-    grant_access = [ "<aws_account_id>" ]
+    grant_access = [ "528115139298" ]
   }
 }

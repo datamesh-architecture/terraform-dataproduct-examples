@@ -9,7 +9,7 @@ module shelf_warmers {
 
   input = [
     {
-      source = "https://<uuid>.execute-api.eu-central-1.amazonaws.com/prod/"
+      source = "<data_product_endpoint>"
     }
   ]
 
