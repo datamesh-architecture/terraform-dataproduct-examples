@@ -20,10 +20,14 @@ module "kafka_to_s3" {
     api_key_secret  = confluent_api_key.app-manager-kafka-api-key.secret
   }
 
+  
+  // todo remove
   aws_athena = {
     workgroup_name = aws_athena_workgroup.aws_athena_workgroup.name
     catalog_name   = aws_athena_data_catalog.aws_athena_data_catalog.name
   }
+  
+  // todo remove, one glue database per data product
   aws_glue = {
     database_name = aws_glue_catalog_database.aws_glue_catalog_database.name
     catalog_id    = aws_glue_catalog_database.aws_glue_catalog_database.catalog_id
@@ -40,6 +44,9 @@ module "kafka_to_s3" {
     }
   ]
   output = {
-    grant_access = [ "528115139298" ]
+    format        = "JSON"                       // Supported: JSON. Optional. Default: JSON. 
+    s3_bucket     = "fulfillment-stock_updated"  // Optional. Default: $domain-$name
+    glue_database = "stock_updated"              // Optional. Default: $name
+    grant_access  = [ "528115139298" ]
   }
 }
