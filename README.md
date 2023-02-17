@@ -4,8 +4,6 @@ This repository contains examples how to use Terraform modules to provide data p
 
 ## Example 1 - Shelf warmers
 
-![Overview](assets/images/shelf_warmers.png)
-
 ### Context
 
 You work for the online retailer Teusaras, which specializes in high-quality children's toys. Teusaras employs about 100 people in software development. The associated online store teusaras.com is an in-house development with which Teusaras wants to differentiate itself from its market competitors through a better user experience and intelligent services.
