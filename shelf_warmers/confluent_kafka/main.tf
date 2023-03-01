@@ -1,36 +1,3 @@
-variable "environment_name" {
-  type = string
-  description = "(Display) name of the Kafka cluster environment"
-  default = "datamesh-dataproducts"
-}
-
-variable "cluster_name" {
-  type = string
-  description = "(Display) name of the Kafka cluster"
-  default = "datamesh-dataproducts"
-}
-
-variable "topics" {
-  type = list(string)
-  description = "List of Kafka topics which should be created"
-  default = [ "stock" ]
-}
-
-variable "availability" {
-  type = string
-  default = "SINGLE_ZONE"
-}
-
-variable "cloud" {
-  type = string
-  default = "AWS"
-}
-
-variable "region" {
-  type = string
-  default ="eu-central-1"
-}
-
 resource "confluent_environment" "environment" {
   display_name = var.environment_name
 }
@@ -49,7 +16,7 @@ resource "confluent_kafka_cluster" "kafka_cluster" {
 }
 
 resource "confluent_service_account" "app-manager" {
-  display_name = "app-manager"
+  display_name = "${var.cluster_name}-app-manager"
   description  = "Service account to manage Kafka cluster"
 }
 
@@ -60,7 +27,7 @@ resource "confluent_role_binding" "app-manager-kafka-cluster-admin" {
 }
 
 resource "confluent_api_key" "app-manager-kafka-api-key" {
-  display_name = "app-manager-kafka-api-key"
+  display_name = "${var.cluster_name}-app-manager-kafka-api-key"
   owner {
     id          = confluent_service_account.app-manager.id
     api_version = confluent_service_account.app-manager.api_version

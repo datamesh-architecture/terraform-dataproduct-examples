@@ -1,7 +1,16 @@
-module shelf_warmers {
-  source = "git@github.com:datamesh-architecture/terraform-datamesh-dataproduct-aws-athena.git"
+// download JSON from remote endpoint
+data "http" "input" {
+  url = "<DATA-PRODUCT-HTTP-ENDPOINT>"
 
-  aws        = var.aws
+  request_headers = {
+    Accept = "application/json"
+  }
+}
+
+module shelf_warmers {
+  source = "git@github.com:datamesh-architecture/terraform-dataproduct-aws-athena.git"
+
+  aws      = var.aws
 
   domain   = "fulfillment"
   name     = "shelf_warmers"
@@ -9,7 +18,7 @@ module shelf_warmers {
 
   input = [
     {
-      source = "<data_product_endpoint>"
+      source = jsondecode(data.http.input.response_body).output.location
     }
   ]
 
@@ -18,6 +27,7 @@ module shelf_warmers {
   }
 
   output = {
+    schema   = "schema/shelf_warmers.schema.json"
     format   = "PARQUET"
   }
 }

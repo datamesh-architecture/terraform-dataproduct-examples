@@ -1,39 +1,15 @@
+module "confluent_kafka" {
+  source = "./confluent_kafka"
+}
+
 module "kafka_to_s3" {
-  source    = "git@github.com:datamesh-architecture/terraform-datamesh-dataproduct-confluent-kafka-to-aws-s3.git"
+  source    = "git@github.com:datamesh-architecture/terraform-dataproduct-confluent-kafka-to-aws-s3.git"
 
   aws       = var.aws
   confluent = var.confluent
+  kafka     = module.confluent_kafka.kafka
 
-  kafka     = {
-    environment = {
-      id = confluent_environment.environment.id
-    }
-    cluster = {
-      id            = confluent_kafka_cluster.kafka_cluster.id
-      api_version   = confluent_kafka_cluster.kafka_cluster.api_version
-      kind          = confluent_kafka_cluster.kafka_cluster.kind
-      rest_endpoint = confluent_kafka_cluster.kafka_cluster.rest_endpoint
-    }
-  }
-  kafka_api_credentials = {
-    api_key_id      = confluent_api_key.app-manager-kafka-api-key.id
-    api_key_secret  = confluent_api_key.app-manager-kafka-api-key.secret
-  }
-
-  
-  // todo remove
-  aws_athena = {
-    workgroup_name = aws_athena_workgroup.aws_athena_workgroup.name
-    catalog_name   = aws_athena_data_catalog.aws_athena_data_catalog.name
-  }
-  
-  // todo remove, one glue database per data product
-  aws_glue = {
-    database_name = aws_glue_catalog_database.aws_glue_catalog_database.name
-    catalog_id    = aws_glue_catalog_database.aws_glue_catalog_database.catalog_id
-  }
-
-  domain = "fulfillment_raw"
+  domain = "fulfillment"
   name = "stock_updated"
   input = [
     {
@@ -44,9 +20,6 @@ module "kafka_to_s3" {
     }
   ]
   output = {
-    format        = "JSON"                       // Supported: JSON. Optional. Default: JSON. 
-    s3_bucket     = "fulfillment-stock_updated"  // Optional. Default: $domain-$name
-    glue_database = "stock_updated"              // Optional. Default: $name
-    grant_access  = [ "528115139298" ]
+    grant_access  = [ "<AWS_ACCOUNT_ID>" ]
   }
 }

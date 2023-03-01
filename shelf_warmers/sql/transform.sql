@@ -1,4 +1,4 @@
-with input as (SELECT * from "stock_updated"),
+with input as (SELECT * from "fulfillment-stock-updated"."stock_updated"),
      all_with_rownumber as (
          select *,
                 row_number() OVER (partition by sku, location order by "updated_at" desc) as row_number
