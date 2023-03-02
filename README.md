@@ -12,4 +12,4 @@ Module is maintained by []().
 
 ## License
 
-MIT License Licensed. See [LICENSE](https://github.com/datamesh-architecture/terraform-datamesh-dataproduct-examples/blob/main/LICENSE) for full details.
+MIT License Licensed. See [LICENSE](https://github.com/datamesh-architecture/terraform-dataproduct-examples/blob/main/LICENSE) for full details.
