@@ -13,7 +13,6 @@ variable "cluster_name" {
 variable "topics" {
   type = list(string)
   description = "List of Kafka topics which should be created"
-  default = [ "stock" ]
 }
 
 variable "availability" {

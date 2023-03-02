@@ -48,12 +48,12 @@ resource "confluent_api_key" "app-manager-kafka-api-key" {
 }
 
 resource "confluent_kafka_topic" "confluent_kafka_topic" {
-  count = length(var.topics)
+  for_each = toset(var.topics)
 
   kafka_cluster {
     id = confluent_kafka_cluster.kafka_cluster.id
   }
-  topic_name    = var.topics[count.index]
+  topic_name    = each.key
   rest_endpoint = confluent_kafka_cluster.kafka_cluster.rest_endpoint
   credentials {
     key    = confluent_api_key.app-manager-kafka-api-key.id

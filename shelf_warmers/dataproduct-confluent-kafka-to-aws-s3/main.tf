@@ -1,5 +1,7 @@
 module "confluent_kafka" {
   source = "./confluent_kafka"
+
+  topics = [ "stock" ]
 }
 
 module "kafka_to_s3" {
@@ -20,6 +22,6 @@ module "kafka_to_s3" {
     }
   ]
   output = {
-    grant_access  = [ "<AWS_ACCOUNT_ID>" ]
+    grant_access  = [ "<aws_account_id>" ]
   }
 }

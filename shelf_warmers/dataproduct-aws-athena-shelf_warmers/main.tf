@@ -1,6 +1,6 @@
 // download JSON from remote endpoint
 data "http" "input" {
-  url = "<DATA-PRODUCT-HTTP-ENDPOINT>"
+  url = "<data_product_endpoint>"
 
   request_headers = {
     Accept = "application/json"
