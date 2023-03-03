@@ -14,6 +14,22 @@ The shelf warmer example uses two Terraform modules:
 
 ![Architecture](https://www.datamesh-architecture.com/images/terraform-datamesh-dataproduct.png.webp)
 
+### `GET /datamesh/fulfillment/stock_updated`
+
+TBD
+
+```json
+{}
+```
+
+### `GET /datamesh/fulfillment/shelf_warmers`
+
+TBD
+
+```json
+{}
+```
+
 ## Requirements
 
 | Name                                                                      | Version    |
