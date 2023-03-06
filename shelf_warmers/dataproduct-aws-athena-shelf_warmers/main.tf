@@ -18,7 +18,7 @@ module shelf_warmers {
 
   input = [
     {
-      source = jsondecode(data.http.input.response_body).output.location
+      source = "s3://<s3-bucket>"
     }
   ]
 
