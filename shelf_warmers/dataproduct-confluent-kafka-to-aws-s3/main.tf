@@ -1,3 +1,4 @@
+// required to set up a kafka cluster and the topic 'stock' for this example on confluent cloud
 module "confluent_kafka" {
   source = "./confluent_kafka"
 
