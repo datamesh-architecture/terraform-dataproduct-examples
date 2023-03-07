@@ -4,20 +4,20 @@
   "title": "shelf_warmers",
   "type": "object",
   "properties": {
-    "sku": {
-      "description": "",
-      "type": "string"
-    },
     "location": {
-      "description": "",
+      "description": "The location (e.g. store) of the shelf warmers",
       "type": "string"
     },
     "available": {
-      "description": "",
+      "description": "Number of available shelf warmers in the specified location",
       "type": "integer"
     },
     "updated_at": {
-      "description": "",
+      "description": "Timestamp where this information were created",
+      "type": "string"
+    },
+    "sku": {
+      "description": "Stock Keeping Unit",
       "type": "string"
     }
   }

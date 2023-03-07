@@ -5,19 +5,19 @@
   "type": "object",
   "properties": {
     "location": {
-      "description": "",
+      "description": "The location (e.g. store) of the corresponding article(s)",
       "type": "string"
     },
     "available": {
-      "description": "",
+      "description": "Number of available articles in the specified location",
       "type": "integer"
     },
     "updated_at": {
-      "description": "",
+      "description": "Timestamp where this information were created",
       "type": "string"
     },
     "sku": {
-      "description": "",
+      "description": "Stock Keeping Unit",
       "type": "string"
     }
   }

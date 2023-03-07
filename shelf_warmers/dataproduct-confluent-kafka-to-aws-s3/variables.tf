@@ -5,6 +5,7 @@ variable "aws" {
     secret_key = string
   })
   sensitive = true
+  description = "AWS related information and credentials"
 }
 
 variable "confluent" {
@@ -13,4 +14,5 @@ variable "confluent" {
     cloud_api_secret = string
   })
   sensitive = true
+  description = "Confluent (Cloud) related credentials"
 }
