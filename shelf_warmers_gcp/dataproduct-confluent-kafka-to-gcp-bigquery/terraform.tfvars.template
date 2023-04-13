@@ -1,0 +1,11 @@
+gcp = {
+  project     = "<project>"
+  credentials = "<path_to_your_credentials_json>"
+  region      = "<region>"
+  zone        = "<zone>"
+}
+
+confluent = {
+  cloud_api_key    = "<cloud_api_key>"
+  cloud_api_secret = "<cloud_api_secret>"
+}

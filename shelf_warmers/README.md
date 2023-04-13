@@ -52,11 +52,13 @@ TBD
 2. `cp .terraform.tfvars.template .terraform.tfvars` and enter AWS and Confluent credentials
 3. Replace `<aws_account_id>` in `main.tf`
 4. `terraform apply`
-5. Enter `yes` and press ENTER
+5. `terraform init`
+6. Enter `yes` and press ENTER
 
 ### Setup second data product "dataproduct-aws-athena-shelf_warmers"
 1. `cd dataproduct-aws-athena-shelf_warmers`
 2. `cp .terraform.tfvars.template .terraform.tfvars` and enter AWS credentials
 3. Replace `<data_product_endpoint>` in `main.tf` with the endpoint provided by the first data product
 4. `terraform apply`
-5. Enter `yes` and press ENTER
+5. `terraform init`
+6. Enter `yes` and press ENTER

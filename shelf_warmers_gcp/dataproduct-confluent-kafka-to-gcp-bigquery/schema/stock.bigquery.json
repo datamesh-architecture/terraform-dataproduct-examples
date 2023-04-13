@@ -1,0 +1,26 @@
+[
+  {
+    "name": "location",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "The location (e.g. store) of the corresponding article(s)"
+  },
+  {
+    "name": "available",
+    "type": "INT64",
+    "mode": "REQUIRED",
+    "description": "Number of available articles at the specified location"
+  },
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "Timestamp when this information was created"
+  },
+  {
+    "name": "sku",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Stock Keeping Unit"
+  }
+]

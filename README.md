@@ -4,11 +4,11 @@ This repository contains examples how to use open source Terraform modules to pr
 
 ### "Shelf warmers"
 
-Further information can be found in the example's [README](shelf_warmers/README.md).
+Further information can be found in the example's [README](shelf_warmers_aws/README.md).
 
 ## Authors
 
-Examples are maintained by [Andre Deuerling](https://www.innoq.com/en/staff/andre-deuerling/), [Jochen Christ](https://www.innoq.com/en/staff/jochen-christ/), and [Simon Harrer](https://www.innoq.com/en/staff/dr-simon-harrer/).
+Examples are maintained by [Andre Deuerling](https://www.innoq.com/en/staff/andre-deuerling/), [Stefan Negele](https://www.innoq.com/en/staff/stefan-negele/), [Jochen Christ](https://www.innoq.com/en/staff/jochen-christ/), and [Simon Harrer](https://www.innoq.com/en/staff/dr-simon-harrer/).
 
 ## License
 
