@@ -57,7 +57,7 @@ TBD
 ### Setup first data product "dataproduct-confluent-kafka-to-gcp-bigquery"
 1. `cd dataproduct-confluent-kafka-to-gcp-bigquery`
 2. `cp .terraform.tfvars.template .terraform.tfvars` and enter GCP project info, add the path to the [credentials file of your service account](https://developers.google.com/workspace/guides/create-credentials#create_credentials_for_a_service_account) and Confluent credentials
-3. Replace `<gcp_principal>` in `main.tf` (https://cloud.google.com/iam/docs/overview#concepts_related_identity)
+3. (optional) Add principals to `data_access` and `discovery_access` in [main.tf](https://github.com/datamesh-architecture/terraform-dataproduct-examples/blob/main/shelf_warmers_gcp/dataproduct-confluent-kafka-to-gcp-bigquery/main.tf#L23). Check (https://cloud.google.com/iam/docs/overview#concepts_related_identity) for more information about IAM management in GCP.
 4. `terraform init`
 5. `terraform apply`
 6. Enter `yes` and press ENTER
