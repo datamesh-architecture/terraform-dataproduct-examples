@@ -5,7 +5,8 @@ module "confluent_kafka" {
 
 
 module "kafka_to_bigquery" {
-  source = "git@github.com:datamesh-architecture/terraform-dataproduct-confluent-kafka-to-gcp-bigquery.git"
+  source  = "datamesh-architecture/dataproduct-confluent-kafka-to-gcp-bigquery/google"
+  version = "0.1.0"
 
   gcp   = var.gcp
   kafka = module.confluent_kafka.kafka

@@ -8,7 +8,8 @@ data "http" "input" {
 }
 
 module shelf_warmers {
-  source = "git@github.com:datamesh-architecture/terraform-dataproduct-aws-athena.git"
+  source  = "datamesh-architecture/dataproduct-aws-athena/aws"
+  version = "0.1.0"
 
   aws      = var.aws
 
