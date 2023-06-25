@@ -1,4 +1,4 @@
-with input as (SELECT * from "fulfillment-stock-updated"."stock_updated"),
+with input as (SELECT * from "fulfillment-stock-updated-tk"."stock_updated"),
      all_with_rownumber as (
          select *,
                 row_number() OVER (partition by sku, location order by "updated_at" desc) as row_number
@@ -26,10 +26,10 @@ with input as (SELECT * from "fulfillment-stock-updated"."stock_updated"),
              from_iso8601_timestamp('2008-01-01T00:00:00Z')
      )
 
-select potential_shelf_warmers.sku,
-       potential_shelf_warmers.location,
+select potential_shelf_warmers.location,
        potential_shelf_warmers.available,
-       potential_shelf_warmers.updated_at
+       potential_shelf_warmers.updated_at,
+       potential_shelf_warmers.sku
 from potential_shelf_warmers
          left outer join all_sales_last_three_month on
             potential_shelf_warmers.sku = all_sales_last_three_month.sku and

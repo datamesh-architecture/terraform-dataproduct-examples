@@ -1,6 +1,6 @@
 // download JSON from remote endpoint
 data "http" "input" {
-  url = "<data_product_endpoint>"
+  url = "<kafka-to-s3-discovery-url>"
 
   request_headers = {
     Accept = "application/json"
@@ -9,7 +9,7 @@ data "http" "input" {
 
 module shelf_warmers {
   source  = "datamesh-architecture/dataproduct-aws-athena/aws"
-  version = "0.1.0"
+  version = "0.2.1"
 
   aws      = var.aws
 
@@ -19,7 +19,7 @@ module shelf_warmers {
 
   input = [
     {
-      source = "s3://<s3-bucket>"
+      source = jsondecode(data.http.input.response_body)["output"]["location"]
     }
   ]
 
@@ -31,4 +31,8 @@ module shelf_warmers {
     schema   = "schema/shelf_warmers.schema.json"
     format   = "PARQUET"
   }
+}
+
+output "discovery_endpoint" {
+  value = module.shelf_warmers.discovery_endpoint
 }

@@ -1,13 +1,14 @@
 // required to set up a kafka cluster and the topic 'stock' for this example on confluent cloud
 module "confluent_kafka" {
   source = "./confluent_kafka"
+  environment_name = "datamesh-dataproducts"
 
   topics = [ "stock" ]
 }
 
 module "kafka_to_s3" {
   source    = "datamesh-architecture/dataproduct-confluent-kafka-to-aws-s3/aws"
-  version = "0.1.0"
+  version = "0.2.0"
 
   aws       = var.aws
   confluent = var.confluent
@@ -24,6 +25,10 @@ module "kafka_to_s3" {
     }
   ]
   output = {
-    grant_access  = [ "<aws_account_id>" ]
+    grant_access  = [ "528115139298" ]
   }
+}
+
+output "discovery_endpoint" {
+  value = module.kafka_to_s3.discovery_endpoint
 }
