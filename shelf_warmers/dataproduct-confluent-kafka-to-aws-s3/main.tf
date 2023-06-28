@@ -25,7 +25,7 @@ module "kafka_to_s3" {
     }
   ]
   output = {
-    grant_access  = [ "528115139298" ]
+    grant_access  = []
   }
 }
 
