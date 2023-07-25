@@ -62,6 +62,14 @@ TBD
 5. `terraform apply`
 6. Enter `yes` and press ENTER
 
+### Setup second data product "dataproduct-gcp-bigquery-transform"
+1. `cd dataproduct-gcp-bigquery-transform`
+2. `cp .terraform.tfvars.template .terraform.tfvars` and enter GCP project info, add the path to the [credentials file of your service account](https://developers.google.com/workspace/guides/create-credentials#create_credentials_for_a_service_account) and Confluent credentials
+3. Adapt `shelf_warmers.sql`
+4. `terraform init`
+5. `terraform apply`
+6. Enter `yes` and press ENTER
+
 ### Discovery
 You can now call the discovery endpoint:
 ```shell

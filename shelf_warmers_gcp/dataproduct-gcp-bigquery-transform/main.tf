@@ -5,9 +5,9 @@ module "bigquery_transform" {
     region  = var.gcp.region
   }
   domain = "fulfillment"
-  name = "shelf_warmers"
   input = {
     source_table = var.source_table
+    transform = ["shelf_warmers.sql"]
   }
   output = {
     discovery_access = ["allUsers"]
