@@ -7,7 +7,6 @@ module "bigquery_transform" {
   domain = "fulfillment"
   input = {
     source_table = var.source_table
-    transform = ["shelf_warmers.sql"]
   }
   output = {
     discovery_access = ["allUsers"]
