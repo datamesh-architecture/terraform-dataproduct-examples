@@ -30,10 +30,15 @@ The shelf warmer example uses two Terraform modules:
 
 ### `GET /datamesh/fulfillment/shelf_warmers`
 
-TBD
-
 ```json
-{}
+{
+  "domain":"fulfillment",
+  "output": {
+    "locations":[
+      ["view-dataproduct-shelf_warmers","https://bigquery.googleapis.com/bigquery/v2/projects/<project>/datasets/aggregations/tables/view-dataproduct-shelf_warmers"]
+    ]
+  }
+}
 ```
 
 ## Requirements
