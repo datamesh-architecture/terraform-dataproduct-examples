@@ -33,9 +33,10 @@ The shelf warmer example uses two Terraform modules:
 ```json
 {
   "domain":"fulfillment",
-  "output": {
+  "name":"shelf_warmers",
+  "output":{
     "locations":[
-      ["view-dataproduct-shelf_warmers","https://bigquery.googleapis.com/bigquery/v2/projects/<project>/datasets/aggregations/tables/view-dataproduct-shelf_warmers"]
+      "https://bigquery.googleapis.com/bigquery/v2/projects/<project>/datasets/aggregations/tables/view-dataproduct-shelf_warmers"
     ]
   }
 }
