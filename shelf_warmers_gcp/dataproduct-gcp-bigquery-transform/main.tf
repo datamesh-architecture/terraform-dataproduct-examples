@@ -1,11 +1,15 @@
 module "bigquery_transform" {
-  source = "git@github.com:datamesh-architecture/terraform-google-dataproduct-gcp-bigquery-transform.git"
+  source  = "datamesh-architecture/dataproduct-gcp-bigquery-transform/google"
+  version = "0.3.0"
+
   gcp = {
     project = var.gcp.project
     region  = var.gcp.region
   }
-  domain = "fulfillment"
+
+  teamId = "fulfillment"
   name = "shelf_warmers"
+
   input = {
     source_table = var.source_table
   }

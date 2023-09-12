@@ -6,14 +6,14 @@ module "confluent_kafka" {
 
 module "kafka_to_bigquery" {
   source  = "datamesh-architecture/dataproduct-confluent-kafka-to-gcp-bigquery/google"
-  version = "0.1.0"
+  version = "0.1.1"
 
   gcp   = var.gcp
   kafka = module.confluent_kafka.kafka
 
   domain = "fulfillment"
   name   = "stock"
-  input = [
+  input  = [
     {
       topic  = "stock"
       format = "JSON"
@@ -23,7 +23,7 @@ module "kafka_to_bigquery" {
   output = {
     data_access      = []
     discovery_access = ["allUsers"]
-    tables = [
+    tables           = [
       {
         id                = "stock"
         schema            = "schema/stock.bigquery.json"
